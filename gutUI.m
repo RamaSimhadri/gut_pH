@@ -84,9 +84,10 @@ function listbox1_Callback(hObject, eventdata, handles)
 %        contents{get(hObject,'Value')} returns selected item from listbox1
 
 %get the name of the selected file and update the edit1 handle
-index_selected = get(hObject,'Value');
-list = get(hObject,'String');
-item_selected = list{index_selected}; 
+index_selected = get(hObject,'Value')
+list = get(hObject,'String')
+item_selected = list{index_selected}
+item_selected = fullfile(handles.images_folder,item_selected);
 set(handles.edit1,'String',item_selected);
 
 %load the image selected, show on axes1, and pass it to handles.I
@@ -146,8 +147,10 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-load_listbox(pwd,handles);
+start_path = pwd;
+images_folder = uigetdir(start_path);
+handles.images_folder = images_folder;
+load_listbox(images_folder,handles);
 guidata(hObject, handles);
 
 % --- Reset B&W Threshold callback
