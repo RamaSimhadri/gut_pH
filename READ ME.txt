@@ -1,0 +1,34 @@
+%_______________gutUI_______________%
+
+Context: To analyze the gut images with pH dye obtained with the following parameters
+Camera Settings (Canon PowerShot S5 IS)
+ISO: 80
+White Balance: Daylight
+Self-Timer: 2s
+F stop: 3.5
+Shutter speed: 1/20s
+Magnification: Maximum
+
+Scope setting (Olympus SZX9, the right dissection scope)
+Oblique: 0%
+Light Intensity: Maximum
+Maginifcation: 9.4
+
+Purpose:
+1. To identify the gut from the background
+2. To isolate the midgut region from the rest of the gut
+3. To measure the length of the midgut
+4. To measure the length of various hues in the midgut
+
+Usage:
+Copy the following scripts into the folder containing the images of interest:
+gutUI.m
+gutUI.fig
+convert_RGB2BW.m
+define_gut_mask.m
+gut_length.m
+hue_mask.m
+load_listbox.m
+
+Open the gutUI.m in MATLAB (2013b or later)
+Run the script
