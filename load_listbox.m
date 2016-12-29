@@ -1,6 +1,6 @@
 %Loads the items in the folder that this script is present in 
 function load_listbox(dir_path, handles)
-cd (dir_path)
+%cd (dir_path)
 dir_struct = dir(dir_path);
 [sorted_names,sorted_index] = sortrows({dir_struct.name}');
 handles.file_names = sorted_names;
