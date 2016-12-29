@@ -32,3 +32,16 @@ load_listbox.m
 
 Open the gutUI.m in MATLAB (2013b or later)
 Run the script
+1. Click on "Show Folder items" button to list the images in the folder
+2. Select the image from the list to analyze. The preview of the image will appear in the box below the list
+3. Click on the "Draw a polygon surrounding the gut" button or the "Continue without drawing the polygon" button depending on the image. If there appears to be a clear water boundary around the gut, proceed with the former. If the background is uniform, proceed with the latter
+4. Use one of the three options to set the threshold to make the image black and white to outline just the gut. 
+  a. The "B&W Threshold" dialog box to set a value between 0 and 1
+  b. Use the slider to select the threshold
+  c. use the "Reset B&W Threshold" button to set the threshold to 0.74
+5. Use one of the three options to set the threshold of object size (in pixels) above which the objects will be considered for further analysis
+  a. The "Pixel Threshold Value" dialog box to set the object size cutoff (usually, 100-1000)
+  b. Use the slider to select the threshold
+  c. use the "Reset pixel threshold" button to set the threshold to 1000
+6. Click the "Draw a polygon to exclude the foregut and hindgut, and get gut length" button. A new figure window will open and a promt will appear to draw a polygon around the regions to be excluded for further analysis. In this case, remove the fore and hind guts. Once this is done, the total gut length will be displayed in the dialog box below the button
+7. Click the "Analyze the lengths of all hue regions" button to get the lengths of each hue in the gut into a csv file. The Hue ranges from 0-1, so bins of size 0.01 are created from 0-1 and the number of pixels of the midgut in each hue bin are recorded. 
