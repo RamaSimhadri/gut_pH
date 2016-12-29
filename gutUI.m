@@ -146,8 +146,9 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-load_listbox(pwd,handles);
+start_path = pwd
+images_folder = uigetdir(start_path)
+load_listbox(images_folder,handles);
 guidata(hObject, handles);
 
 % --- Reset B&W Threshold callback
